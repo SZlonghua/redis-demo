@@ -1,9 +1,6 @@
 package com.example.redis;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
@@ -52,6 +49,9 @@ public class CustomerJedisTest {
             System.out.println("没收到回复 我下啦\n\n\n\n\n");
             e.printStackTrace();
         } catch (SocketException e) {
+            e.printStackTrace();
+        }  catch (UncheckedIOException e) {
+            System.out.println("没收到回复 我下啦ssssss\n\n\n\n\n");
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
